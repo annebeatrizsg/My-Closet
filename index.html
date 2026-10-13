@@ -180,23 +180,37 @@
         </form>
       </div>
 
-      <!-- 3. TELA: CRIAR LOOK (COM VÁRIOS LOOKS GERADOS) -->
+      <!-- 3. TELA: CRIAR LOOK -->
       <div id="screen-look" class="screen">
         <p class="text-[10px] tracking-widest text-[#704E38] font-bold uppercase mt-2">Estilo</p>
         <h1 class="text-2xl font-serif font-bold mb-4">Criar Look</h1>
 
-        <div class="bg-white rounded-2xl p-4 shadow-sm text-center border border-gray-100 mb-4">
-          <div class="w-10 h-10 rounded-full bg-[#FDFBF7] mx-auto flex items-center justify-center text-[#704E38] mb-2">
-            <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+        <div class="bg-white rounded-2xl p-5 shadow-sm text-center border border-gray-100 mb-4">
+          <div class="w-12 h-12 rounded-full bg-[#FDFBF7] mx-auto flex items-center justify-center text-[#704E38] mb-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
           </div>
-          <h3 class="text-xs font-bold text-gray-800">Gerador Inteligente</h3>
-          <p class="text-[10px] text-gray-500 mb-3">Sorteie diversas opções de combinações do seu closet.</p>
-          <button onclick="generateMultipleLooks()" class="w-full py-2.5 bg-[#704E38] text-white text-xs font-bold rounded-xl active:scale-95 transition">Gerar Sugestões de Looks</button>
+          <h3 class="text-sm font-bold text-gray-800">Monte Combinações Rápidas</h3>
+          <p class="text-[11px] text-gray-500 mb-4">Selecione peças do seu closet ou gere um look automático.</p>
+          <button onclick="generateRandomLook()" class="px-5 py-2.5 bg-[#704E38] text-white text-xs font-bold rounded-xl active:scale-95 transition">Gerar Look Automático</button>
         </div>
 
-        <!-- Lista de Vários Looks Gerados -->
-        <div id="generated-looks-container" class="space-y-4 pb-2">
-          <!-- Os looks são inseridos aqui dinamicamente -->
+        <div id="generated-look-result" class="hidden bg-[#EFE9E1] p-4 rounded-2xl space-y-3">
+          <p class="text-xs font-bold text-[#704E38]">Look Sugerido:</p>
+          <div class="flex items-center gap-3 bg-white p-2 rounded-xl">
+            <img id="look-top-img" class="w-12 h-12 object-cover rounded-lg">
+            <div>
+              <p id="look-top-title" class="text-xs font-bold"></p>
+              <p class="text-[10px] text-gray-400">Parte de Cima</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-2 rounded-xl">
+            <img id="look-bottom-img" class="w-12 h-12 object-cover rounded-lg">
+            <div>
+              <p id="look-bottom-title" class="text-xs font-bold"></p>
+              <p class="text-[10px] text-gray-400">Parte de Baixo</p>
+            </div>
+          </div>
+          <button onclick="showToast('Look guardado no histórico!')" class="w-full py-2 bg-[#704E38] text-white text-xs font-bold rounded-xl active:scale-95 transition">Guardar Look</button>
         </div>
       </div>
 
@@ -416,10 +430,6 @@
         bottomNav.classList.remove('hidden');
       }
 
-      if (screenId === 'look') {
-        generateMultipleLooks();
-      }
-
       if (event && event.currentTarget && event.currentTarget.classList.contains('nav-btn')) {
         document.querySelectorAll('.nav-btn').forEach(btn => {
           btn.classList.remove('text-[#704E38]');
@@ -464,47 +474,17 @@
       showToast("Peça adicionada!");
     }
 
-    // GERADOR DE MÚLTIPLOS LOOKS AUTOMÁTICOS
-    function generateMultipleLooks() {
-      const container = document.getElementById('generated-looks-container');
-      
-      const tops = items.filter(i => i.cat === 'Blusas' || i.cat === 'Casacos');
-      const bottoms = items.filter(i => i.cat === 'Calças' || i.cat === 'Vestidos');
+    function generateRandomLook() {
+      const top = items.find(i => i.cat === 'Blusas' || i.cat === 'Casacos') || items[0];
+      const bottom = items.find(i => i.cat === 'Calças' || i.cat === 'Vestidos') || items[1];
 
-      // Cria combinações variadas
-      const looks = [
-        { title: "Look Casual Chic", top: tops[0] || items[0], bottom: bottoms[0] || items[2], tag: "Trabalho / Dia a Dia" },
-        { title: "Look Verão Elegante", top: tops[1] || items[1], bottom: bottoms[1] || items[3], tag: "Passeio / Encontro" },
-        { title: "Look Sofisticado", top: tops[0] || items[0], bottom: bottoms[1] || items[3], tag: "Evento Noturno" }
-      ];
+      document.getElementById('look-top-img').src = top.img;
+      document.getElementById('look-top-title').innerText = top.name;
+      document.getElementById('look-bottom-img').src = bottom.img;
+      document.getElementById('look-bottom-title').innerText = bottom.name;
 
-      container.innerHTML = looks.map((look, index) => `
-        <div class="bg-[#EFE9E1] p-3.5 rounded-2xl space-y-2 border border-gray-200">
-          <div class="flex justify-between items-center">
-            <span class="text-[10px] font-bold text-[#704E38] uppercase tracking-wider">${look.title}</span>
-            <span class="text-[9px] bg-white px-2 py-0.5 rounded-full text-gray-500 font-semibold">${look.tag}</span>
-          </div>
-          <div class="grid grid-cols-2 gap-2">
-            <div class="flex items-center gap-2 bg-white p-2 rounded-xl">
-              <img src="${look.top.img}" class="w-10 h-10 object-cover rounded-lg">
-              <div class="overflow-hidden">
-                <p class="text-[11px] font-bold text-gray-800 truncate">${look.top.name}</p>
-                <p class="text-[9px] text-gray-400">Parte Cima</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 bg-white p-2 rounded-xl">
-              <img src="${look.bottom.img}" class="w-10 h-10 object-cover rounded-lg">
-              <div class="overflow-hidden">
-                <p class="text-[11px] font-bold text-gray-800 truncate">${look.bottom.name}</p>
-                <p class="text-[9px] text-gray-400">Parte Baixo</p>
-              </div>
-            </div>
-          </div>
-          <button onclick="showToast('Look #${index + 1} guardado!')" class="w-full py-1.5 bg-[#704E38] text-white text-[11px] font-bold rounded-lg active:scale-95 transition">Guardar este Look</button>
-        </div>
-      `).join('');
-
-      showToast("Novas sugestões geradas!");
+      document.getElementById('generated-look-result').classList.remove('hidden');
+      showToast("Look gerado!");
     }
 
     renderGrid(items);
