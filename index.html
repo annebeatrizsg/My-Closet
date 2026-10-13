@@ -75,8 +75,8 @@
 
           <!-- Abas Login / Cadastro -->
           <div class="w-full bg-[#EFE9E1] p-1 rounded-xl flex mb-5">
-            <button id="tab-login-btn" onclick="switchAuthTab('login')" class="w-1/2 py-2 text-xs font-bold rounded-lg bg-[#704E38] text-white shadow-sm transition">Entrar</button>
-            <button id="tab-signup-btn" onclick="switchAuthTab('signup')" class="w-1/2 py-2 text-xs font-bold rounded-lg text-gray-600 transition">Criar Conta</button>
+            <button type="button" id="tab-login-btn" onclick="switchAuthTab('login')" class="w-1/2 py-2 text-xs font-bold rounded-lg bg-[#704E38] text-white shadow-sm transition">Entrar</button>
+            <button type="button" id="tab-signup-btn" onclick="switchAuthTab('signup')" class="w-1/2 py-2 text-xs font-bold rounded-lg text-gray-600 transition">Criar Conta</button>
           </div>
 
           <!-- Formulário de Login -->
@@ -119,28 +119,28 @@
             <p class="text-[10px] tracking-widest text-[#704E38] font-bold uppercase">Minha Coleção</p>
             <h1 class="text-2xl font-serif font-bold text-[#3D3835]">Meu Armário</h1>
           </div>
-          <button onclick="switchScreen('add')" class="w-10 h-10 rounded-full bg-[#704E38] text-white flex items-center justify-center shadow-md active:scale-95 transition">
+          <button type="button" onclick="switchScreen('add')" class="w-10 h-10 rounded-full bg-[#704E38] text-white flex items-center justify-center shadow-md active:scale-95 transition">
             <i class="fa-solid fa-plus text-lg"></i>
           </button>
         </div>
 
         <!-- Filtro de Categorias -->
         <div class="flex gap-2 overflow-x-auto pb-2 mb-4 scrollbar-none" id="categories-bar">
-          <button onclick="filterCategory('Todos')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#704E38] text-white shadow-sm">Todos</button>
-          <button onclick="filterCategory('Blusas')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Blusas</button>
-          <button onclick="filterCategory('Calças')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Calças</button>
-          <button onclick="filterCategory('Casacos')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Casacos</button>
-          <button onclick="filterCategory('Vestidos')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Vestidos</button>
+          <button type="button" onclick="filterCategory('Todos')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#704E38] text-white shadow-sm">Todos</button>
+          <button type="button" onclick="filterCategory('Blusas')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Blusas</button>
+          <button type="button" onclick="filterCategory('Calças')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Calças</button>
+          <button type="button" onclick="filterCategory('Casacos')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Casacos</button>
+          <button type="button" onclick="filterCategory('Vestidos')" class="cat-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#EFE9E1] text-[#3D3835]">Vestidos</button>
         </div>
 
-        <!-- Grid de Peças -->
+        <!-- Grid de Peças com Opção de Exclusão (Melhoria 2) -->
         <div class="grid grid-cols-2 gap-3" id="clothes-grid"></div>
       </div>
 
       <!-- 2. TELA: ADICIONAR PEÇA -->
       <div id="screen-add" class="screen">
         <div class="flex items-center gap-3 mt-2 mb-4">
-          <button onclick="switchScreen('closet')" class="text-gray-600"><i class="fa-solid fa-arrow-left text-lg"></i></button>
+          <button type="button" onclick="switchScreen('closet')" class="text-gray-600"><i class="fa-solid fa-arrow-left text-lg"></i></button>
           <h1 class="text-xl font-serif font-bold">Adicionar Peça</h1>
         </div>
 
@@ -185,33 +185,16 @@
         <p class="text-[10px] tracking-widest text-[#704E38] font-bold uppercase mt-2">Estilo</p>
         <h1 class="text-2xl font-serif font-bold mb-4">Criar Look</h1>
 
-        <div class="bg-white rounded-2xl p-5 shadow-sm text-center border border-gray-100 mb-4">
-          <div class="w-12 h-12 rounded-full bg-[#FDFBF7] mx-auto flex items-center justify-center text-[#704E38] mb-2">
-            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+        <div class="bg-white rounded-2xl p-4 shadow-sm text-center border border-gray-100 mb-4">
+          <div class="w-10 h-10 rounded-full bg-[#FDFBF7] mx-auto flex items-center justify-center text-[#704E38] mb-2">
+            <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
           </div>
-          <h3 class="text-sm font-bold text-gray-800">Monte Combinações Rápidas</h3>
-          <p class="text-[11px] text-gray-500 mb-4">Selecione peças do seu closet ou gere um look automático.</p>
-          <button onclick="generateRandomLook()" class="px-5 py-2.5 bg-[#704E38] text-white text-xs font-bold rounded-xl active:scale-95 transition">Gerar Look Automático</button>
+          <h3 class="text-xs font-bold text-gray-800">Gerador Inteligente</h3>
+          <p class="text-[10px] text-gray-500 mb-3">Sorteie diversas opções de combinações do seu closet.</p>
+          <button type="button" onclick="generateMultipleLooks()" class="w-full py-2.5 bg-[#704E38] text-white text-xs font-bold rounded-xl active:scale-95 transition">Gerar Sugestões de Looks</button>
         </div>
 
-        <div id="generated-look-result" class="hidden bg-[#EFE9E1] p-4 rounded-2xl space-y-3">
-          <p class="text-xs font-bold text-[#704E38]">Look Sugerido:</p>
-          <div class="flex items-center gap-3 bg-white p-2 rounded-xl">
-            <img id="look-top-img" class="w-12 h-12 object-cover rounded-lg">
-            <div>
-              <p id="look-top-title" class="text-xs font-bold"></p>
-              <p class="text-[10px] text-gray-400">Parte de Cima</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 bg-white p-2 rounded-xl">
-            <img id="look-bottom-img" class="w-12 h-12 object-cover rounded-lg">
-            <div>
-              <p id="look-bottom-title" class="text-xs font-bold"></p>
-              <p class="text-[10px] text-gray-400">Parte de Baixo</p>
-            </div>
-          </div>
-          <button onclick="showToast('Look guardado no histórico!')" class="w-full py-2 bg-[#704E38] text-white text-xs font-bold rounded-xl active:scale-95 transition">Guardar Look</button>
-        </div>
+        <div id="generated-looks-container" class="space-y-4 pb-2"></div>
       </div>
 
       <!-- 4. TELA: MALA DE VIAGEM -->
@@ -228,7 +211,7 @@
         <h3 class="text-xs font-bold text-gray-700 mb-2">Checklist da Mala</h3>
         <div id="mala-checklist" class="space-y-2 mb-4"></div>
 
-        <button onclick="addMalaItemPrompt()" class="w-full py-3 border-2 border-dashed border-[#704E38] text-[#704E38] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 active:bg-gray-100">
+        <button type="button" onclick="addMalaItemPrompt()" class="w-full py-3 border-2 border-dashed border-[#704E38] text-[#704E38] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 active:bg-gray-100">
           <i class="fa-solid fa-plus"></i> Adicionar Item à Mala
         </button>
       </div>
@@ -283,11 +266,11 @@
         </div>
 
         <div class="bg-white rounded-2xl p-2 shadow-sm border border-gray-100 space-y-1">
-          <button onclick="showToast('Preferências atualizadas!')" class="w-full p-3 text-left text-xs font-semibold text-gray-700 flex justify-between items-center hover:bg-gray-50 rounded-xl">
+          <button type="button" onclick="showToast('Preferências atualizadas!')" class="w-full p-3 text-left text-xs font-semibold text-gray-700 flex justify-between items-center hover:bg-gray-50 rounded-xl">
             <span>Preferências de Estilo</span>
             <i class="fa-solid fa-chevron-right text-gray-400 text-[10px]"></i>
           </button>
-          <button onclick="switchScreen('auth'); showToast('Sessão encerrada!');" class="w-full p-3 text-left text-xs font-semibold text-red-600 flex justify-between items-center hover:bg-red-50 rounded-xl">
+          <button type="button" onclick="switchScreen('auth'); showToast('Sessão encerrada!');" class="w-full p-3 text-left text-xs font-semibold text-red-600 flex justify-between items-center hover:bg-red-50 rounded-xl">
             <span>Sair da Conta</span>
             <i class="fa-solid fa-right-from-bracket text-red-400 text-[10px]"></i>
           </button>
@@ -298,23 +281,23 @@
 
     <!-- MENU DE NAVEGAÇÃO INFERIOR -->
     <div id="bottom-nav" class="hidden absolute bottom-0 left-0 right-0 h-16 bg-white border-t border-gray-100 flex justify-around items-center px-2 z-40">
-      <button onclick="switchScreen('closet')" class="nav-btn text-[#704E38] flex flex-col items-center gap-1">
+      <button type="button" data-screen="closet" onclick="switchScreen('closet')" class="nav-btn text-[#704E38] flex flex-col items-center gap-1">
         <i class="fa-solid fa-shirt text-base"></i>
         <span class="text-[9px] font-bold">Meu Closet</span>
       </button>
-      <button onclick="switchScreen('look')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
+      <button type="button" data-screen="look" onclick="switchScreen('look')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
         <i class="fa-solid fa-wand-magic-sparkles text-base"></i>
         <span class="text-[9px] font-bold">Criar Look</span>
       </button>
-      <button onclick="switchScreen('mala')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
+      <button type="button" data-screen="mala" onclick="switchScreen('mala')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
         <i class="fa-solid fa-suitcase text-base"></i>
         <span class="text-[9px] font-bold">Mala</span>
       </button>
-      <button onclick="switchScreen('stats')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
+      <button type="button" data-screen="stats" onclick="switchScreen('stats')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
         <i class="fa-solid fa-chart-simple text-base"></i>
         <span class="text-[9px] font-bold">Estatísticas</span>
       </button>
-      <button onclick="switchScreen('profile')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
+      <button type="button" data-screen="profile" onclick="switchScreen('profile')" class="nav-btn text-gray-400 flex flex-col items-center gap-1">
         <i class="fa-solid fa-user text-base"></i>
         <span class="text-[9px] font-bold">Perfil</span>
       </button>
@@ -338,157 +321,4 @@
     function switchAuthTab(tab) {
       const loginForm = document.getElementById('form-login');
       const signupForm = document.getElementById('form-signup');
-      const loginBtn = document.getElementById('tab-login-btn');
-      const signupBtn = document.getElementById('tab-signup-btn');
-
-      if (tab === 'login') {
-        loginForm.classList.remove('hidden');
-        signupForm.classList.add('hidden');
-        loginBtn.classList.add('bg-[#704E38]', 'text-white');
-        loginBtn.classList.remove('text-gray-600');
-        signupBtn.classList.remove('bg-[#704E38]', 'text-white');
-        signupBtn.classList.add('text-gray-600');
-      } else {
-        signupForm.classList.remove('hidden');
-        loginForm.classList.add('hidden');
-        signupBtn.classList.add('bg-[#704E38]', 'text-white');
-        signupBtn.classList.remove('text-gray-600');
-        loginBtn.classList.remove('bg-[#704E38]', 'text-white');
-        loginBtn.classList.add('text-gray-600');
-      }
-    }
-
-    function handleAuth(e, msg) {
-      e.preventDefault();
-      switchScreen('closet');
-      showToast(msg);
-    }
-
-    function renderGrid(data) {
-      const grid = document.getElementById('clothes-grid');
-      grid.innerHTML = data.map(item => `
-        <div class="bg-white rounded-2xl p-2 shadow-sm border border-gray-100 relative">
-          <span class="absolute top-3 right-3 bg-white/80 backdrop-blur-sm text-[9px] font-bold px-2 py-0.5 rounded-full text-gray-600">${item.uses}x uso</span>
-          <img src="${item.img}" class="w-full h-32 object-cover rounded-xl mb-2">
-          <h4 class="text-xs font-bold text-gray-800 truncate">${item.name}</h4>
-          <div class="flex justify-between items-center mt-1">
-            <span class="text-[10px] text-gray-400">${item.color}</span>
-            <span class="text-[10px] font-bold text-[#704E38]">R$ ${item.price}/uso</span>
-          </div>
-        </div>
-      `).join('');
-      document.getElementById('stat-total').innerText = items.length;
-    }
-
-    function renderMala() {
-      const list = document.getElementById('mala-checklist');
-      list.innerHTML = malaItems.map((item, idx) => `
-        <div onclick="toggleMalaItem(${idx})" class="bg-white p-3 rounded-xl border border-gray-100 flex justify-between items-center cursor-pointer">
-          <span class="text-xs font-medium ${item.checked ? 'line-through text-gray-400' : 'text-gray-700'}">${item.name}</span>
-          <div class="w-5 h-5 rounded-md flex items-center justify-center ${item.checked ? 'bg-[#704E38] text-white' : 'border border-gray-300'}">
-            ${item.checked ? '<i class="fa-solid fa-check text-[10px]"></i>' : ''}
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function toggleMalaItem(idx) {
-      malaItems[idx].checked = !malaItems[idx].checked;
-      renderMala();
-      showToast("Mala atualizada!");
-    }
-
-    function addMalaItemPrompt() {
-      const name = prompt("Digite o nome do item para a mala:");
-      if (name) {
-        malaItems.push({ name: name, checked: false });
-        renderMala();
-        showToast("Item adicionado!");
-      }
-    }
-
-    function filterCategory(cat) {
-      document.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.classList.remove('bg-[#704E38]', 'text-white');
-        btn.classList.add('bg-[#EFE9E1]', 'text-[#3D3835]');
-      });
-      event.target.classList.remove('bg-[#EFE9E1]', 'text-[#3D3835]');
-      event.target.classList.add('bg-[#704E38]', 'text-white');
-
-      if (cat === 'Todos') renderGrid(items);
-      else renderGrid(items.filter(i => i.cat === cat));
-    }
-
-    function switchScreen(screenId) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(`screen-${screenId}`).classList.add('active');
-
-      const bottomNav = document.getElementById('bottom-nav');
-      if (screenId === 'auth') {
-        bottomNav.classList.add('hidden');
-      } else {
-        bottomNav.classList.remove('hidden');
-      }
-
-      if (event && event.currentTarget && event.currentTarget.classList.contains('nav-btn')) {
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-          btn.classList.remove('text-[#704E38]');
-          btn.classList.add('text-gray-400');
-        });
-        event.currentTarget.classList.remove('text-gray-400');
-        event.currentTarget.classList.add('text-[#704E38]');
-      }
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.innerText = msg;
-      toast.classList.remove('opacity-0', 'pointer-events-none');
-      setTimeout(() => toast.classList.add('opacity-0', 'pointer-events-none'), 2000);
-    }
-
-    function previewImage(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const img = document.getElementById('image-preview');
-          img.src = e.target.result;
-          img.classList.remove('hidden');
-        }
-        reader.readAsDataURL(file);
-      }
-    }
-
-    function handleAddItem(e) {
-      e.preventDefault();
-      const name = document.getElementById('item-name').value;
-      const cat = document.getElementById('item-cat').value;
-      const price = document.getElementById('item-price').value;
-      const color = document.getElementById('item-color').value || "Neutro";
-      const img = document.getElementById('image-preview').src || "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300";
-
-      items.unshift({ id: Date.now(), name, cat, price: Number(price), uses: 0, img, color });
-      renderGrid(items);
-      switchScreen('closet');
-      showToast("Peça adicionada!");
-    }
-
-    function generateRandomLook() {
-      const top = items.find(i => i.cat === 'Blusas' || i.cat === 'Casacos') || items[0];
-      const bottom = items.find(i => i.cat === 'Calças' || i.cat === 'Vestidos') || items[1];
-
-      document.getElementById('look-top-img').src = top.img;
-      document.getElementById('look-top-title').innerText = top.name;
-      document.getElementById('look-bottom-img').src = bottom.img;
-      document.getElementById('look-bottom-title').innerText = bottom.name;
-
-      document.getElementById('generated-look-result').classList.remove('hidden');
-      showToast("Look gerado!");
-    }
-
-    renderGrid(items);
-    renderMala();
-  </script>
-</body>
-</html>
+      const loginBtn = document.getElementById
