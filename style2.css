@@ -1,0 +1,160 @@
+/* ==========================================
+   1. DESIGN SYSTEM (Variáveis globais)
+   ================================---------- */
+:root {
+    /* As 3 cores da equipe em HEX (Paleta neutra/quente aconchegante) */
+    --cor-primaria: #704E38;
+    --cor-secundaria: #C5A58E;
+    --cor-fundo: #F7F2E9;
+    
+    /* Cores de suporte */
+    --cor-texto: #3D3835;
+    --cor-branco: #FFFFFF;
+
+    /* As 2 fontes escolhidas */
+    --fonte-titulo: 'Cormorant Garamond', serif;
+    --fonte-corpo: 'Nunito', sans-serif;
+
+    /* Tamanho base de texto */
+    --tamanho-base: 1rem; /* 16px */
+}
+
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600&display=swap');
+
+/* ==========================================
+   2. RESET E ESTILOS GERAIS
+   ================================---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    font-size: var(--tamanho-base);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   3. CABEÇALHO
+   ================================---------- */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    /* Padding vertical: 24px (3x8) | Lateral: 32px (4x8) */
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--fonte-titulo);
+    /* Tamanho em rem: 32px (2rem) */
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
+}
+
+/* ==========================================
+   4. CONTEÚDO PRINCIPAL E SEÇÃO DA EQUIPE
+   ================================---------- */
+main {
+    max-width: 1000px;
+    /* Margem superior/inferior: 40px (5x8), Laterais: auto */
+    margin: 2.5rem auto;
+    /* Padding lateral: 24px (3x8) */
+    padding: 0 1.5rem;
+}
+
+#equipe {
+    /* Layout em grid organizando os cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Espaçamento entre os cards: 24px (3x8) */
+    gap: 1.5rem;
+}
+
+article {
+    background-color: var(--cor-branco);
+    /* Padding interno: 24px (3x8) */
+    padding: 1.5rem;
+    border-radius: 8px; /* 8px (1x8) */
+    box-shadow: 0 4px 6px rgba(61, 56, 53, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+article h2 {
+    font-family: var(--fonte-titulo);
+    /* Tamanho em rem: 24px (1.5rem) */
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    /* Margem abaixo do título: 16px (2x8) */
+    margin-bottom: 1rem;
+}
+
+article img {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px; /* 8px (1x8) */
+    /* Margem abaixo da imagem: 16px (2x8) */
+    margin-bottom: 1rem;
+}
+
+article p {
+    font-size: 1rem; /* 16px */
+    /* Margem abaixo dos parágrafos: 8px (1x8) */
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   5. ESTILO DO BOTÃO / LINK INTERATIVO
+   ================================---------- */
+.btn-saiba-mais {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    font-weight: 600;
+    font-size: 0.875rem; /* 14px */
+    text-decoration: none;
+    
+    /* Espaçamento interno (Padding): 8px topo/baixo (1x8), 16px lados (2x8) */
+    padding: 0.5rem 1rem; 
+    border-radius: 6px;
+    
+    /* Margem superior para afastar do texto: 16px (2x8) */
+    margin-top: 1rem;
+    
+    /* Transição suave para o efeito de hover */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branco);
+    text-decoration: none;
+}
+
+.btn-saiba-mais:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================
+   6. RODAPÉ
+   ================================---------- */
+footer {
+    text-align: center;
+    /* Padding superior/inferior: 24px (3x8) */
+    padding: 1.5rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    /* Margem superior para separar do conteúdo: 40px (5x8) */
+    margin-top: 2.5rem;
+    font-size: 0.875rem; /* 14px */
+}
