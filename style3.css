@@ -1,0 +1,208 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7f9;
+    color: #49353d;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 8%;
+    background-color: #ffffff;
+}
+
+.logo {
+    color: #b85c7a;
+    font-size: 28px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #49353d;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #b85c7a;
+}
+
+/* Botões */
+.botao {
+    display: inline-block;
+    padding: 12px 22px;
+    background-color: #b85c7a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: #94435e;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 8%;
+}
+
+.hero-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1;
+}
+
+.hero-texto h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: #94435e;
+}
+
+.hero-texto p {
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.hero-imagem {
+    flex: 1;
+}
+
+.hero-imagem img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* SEÇÃO DE CARDS */
+.secao-looks {
+    padding: 50px 8%;
+    background-color: #fce8ee;
+}
+
+.secao-looks > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #94435e;
+}
+
+/* Grade flexível */
+.grade-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    flex: 1 1 220px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #49353d15;
+}
+
+.card-icone {
+    font-size: 35px;
+}
+
+.card h3 {
+    color: #b85c7a;
+}
+
+/* SOBRE */
+.sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    padding: 50px 8%;
+}
+
+.sobre h2 {
+    color: #94435e;
+}
+
+.sobre p {
+    max-width: 750px;
+}
+
+/* RODAPÉ */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #b85c7a;
+    color: white;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-texto {
+        align-items: center;
+    }
+
+    .hero-texto h2 {
+        font-size: 32px;
+    }
+
+    .hero-imagem {
+        width: 100%;
+    }
+
+    .hero-imagem img {
+        height: 280px;
+    }
+}
