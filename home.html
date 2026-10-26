@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home do Projeto - Design System</title>
+    <!-- Importando as fontes do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    
+    <style>
+        /* ==========================================
+           1. DESIGN SYSTEM (Variáveis globais)
+           ================================---------- */
+        :root {
+            /* As 3 cores da equipe (em HEX) */
+            --cor-primaria: #1A365D;
+            --cor-secundaria: #3182CE;
+            --cor-fundo: #F7FAFC;
+            --cor-texto: #2D3748;
+            --cor-branco: #FFFFFF;
+
+            /* As 2 fontes escolhidas */
+            --fonte-titulo: 'Poppins', sans-serif;
+            --fonte-corpo: 'Inter', sans-serif;
+
+            /* Tamanho base de texto */
+            --tamanho-base: 1rem; /* 16px */
+        }
+
+        /* ==========================================
+           2. ESTILOS GERAIS DA PÁGINA
+           ================================---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            font-family: var(--fonte-corpo);
+            font-size: var(--tamanho-base);
+            line-height: 1.5;
+        }
+
+        /* ==========================================
+           3. ESTRUTURA DA HOME (Espaçamentos em múltiplos de 8px)
+           ================================---------- */
+        header {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            /* Padding superior/inferior: 24px (3x8), Lateral: 32px (4x8) */
+            padding: 1.5rem 2rem; 
+        }
+
+        header h1 {
+            font-family: var(--fonte-titulo);
+            /* Tamanho em rem */
+            font-size: 2rem; /* 32px */
+        }
+
+        main {
+            /* Margem máxima e centralização */
+            max-width: 800px;
+            /* Margem superior/inferior: 40px (5x8), Laterais: auto */
+            margin: 2.5rem auto; 
+            /* Padding interno: 32px (4x8) */
+            padding: 0 2rem;
+        }
+
+        section {
+            background-color: var(--cor-branco);
+            /* Padding interno: 24px (3x8) */
+            padding: 1.5rem;
+            /* Distância entre as seções: 24px (3x8) */
+            margin-bottom: 1.5rem;
+            border-radius: 8px; /* 8px (1x8) */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem; /* 24px */
+            color: var(--cor-secundaria);
+            /* Margem abaixo do título: 16px (2x8) */
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem; /* 16px */
+            /* Margem abaixo do parágrafo: 16px (2x8) */
+            margin-bottom: 1rem;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-branco);
+            text-decoration: none;
+            font-weight: 600;
+            /* Padding vertical: 12px? Cuidado! Use múltiplos de 8: 8px (1x8) ou 16px (2x8) */
+            /* Padding: 8px (1x8) em cima/baixo e 16px (2x8) dos lados */
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindos ao My Closet</h1>
+    </header>
+
+    <main>
+        <section id="sobre-nos">
+            <h2>Sobre a Nossa Equipe</h2>
+            <p>Somos um grupo de estudantes focado no desenvolvimento e design de soluções web funcionais e acessíveis. Combinamos nossas principais habilidades em comunicação, pesquisa e design para transformar ideias em experiências digitais organizadas e eficientes.</p>
+            <a href="#" class="botao">Saiba mais</a>
+        </section>
+
+        <section>
+            <h2>Próximos Passos</h2>
+            <p>O revisor do grupo deve conferir se o código acima está sendo seguido por todos e se não há nenhum pixel aleatório perdido pelo layout.</p>
+        </section>
+    </main>
+
+</body>
+</html>
