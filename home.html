@@ -4,84 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Closet</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Closet | Início</title>
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <header class="navbar">
-        <h1 class="logo">My Closet</h1>
+    <!-- Cabeçalho com a logo -->
+    <header class="cabecalho">
+        <img
+            class="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfN-MIlW1K1WHr-yzY33R5t1U-qR4qwJUJFW_rS82gulIGEv0rxkSfMdc&s=10"
+            alt="Logo do My Closet"
+        >
 
-        <nav class="menu">
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#looks">Looks</a>
-        </nav>
-
-        <a href="#looks" class="botao">Começar</a>
+        <h1>My Closet</h1>
     </header>
 
+    <!-- Menu de navegação entre as quatro páginas -->
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="equipe.html">Sobre</a>
+        <a href="looks.html">Looks</a>
+        <a href="produto.html">Meu closet</a>
+    </nav>
+
+    <!-- Conteúdo principal -->
     <main>
-        <!-- Hero: texto e imagem lado a lado -->
-        <section class="hero" id="inicio">
-            <div class="hero-texto">
-                <h2>Seu estilo, sua identidade.</h2>
 
-                <p>
-                    Organize seu guarda-roupa, crie combinações
-                    incríveis e descubra novas formas de usar
-                    suas roupas favoritas.
-                </p>
-
-                <a href="#looks" class="botao">Explorar looks</a>
-            </div>
-
-            <div class="hero-imagem">
-                <img
-                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
-                    alt="Inspiração de moda e roupas"
-                >
-            </div>
-        </section>
-
-        <!-- Grade de cards -->
-        <section class="secao-looks" id="looks">
-            <h2>Explore seu estilo</h2>
-
-            <div class="grade-cards">
-                <article class="card">
-                    <div class="card-icone">👗</div>
-                    <h3>Meu guarda-roupa</h3>
-                    <p>Organize suas peças favoritas em um só lugar.</p>
-                </article>
-
-                <article class="card">
-                    <div class="card-icone">✨</div>
-                    <h3>Montar looks</h3>
-                    <p>Crie combinações diferentes com suas roupas.</p>
-                </article>
-
-                <article class="card">
-                    <div class="card-icone">📅</div>
-                    <h3>Planejar looks</h3>
-                    <p>Organize suas combinações para a semana.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Sobre o projeto -->
-        <section class="sobre" id="sobre">
-            <h2>Sobre o My Closet</h2>
+        <!-- Apresentação inicial -->
+        <section class="bloco" id="inicio">
+            <h2>Seu estilo, sua identidade.</h2>
 
             <p>
-                O My Closet é um projeto que ajuda você a gerenciar
-                suas roupas, economizar tempo e incentivar o consumo
-                consciente por meio da reutilização das peças.
+                Organize seu guarda-roupa, crie combinações
+                incríveis e descubra novas formas de usar
+                suas roupas favoritas.
             </p>
+
+            <a href="looks.html" class="botao">
+                Explorar looks
+            </a>
         </section>
+
+        <!-- Imagem de destaque -->
+        <section class="bloco">
+            <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80"
+                alt="Inspiração de moda e roupas"
+                class="imagem-destaque"
+            >
+        </section>
+
+        <!-- Atalhos para as principais funções -->
+        <section class="bloco">
+            <h2>Comece por aqui</h2>
+
+            <div class="grade-cards">
+
+                <article class="card">
+                    <span class="icone">👗</span>
+                    <h3>Meu guarda-roupa</h3>
+                    <p>
+                        Organize suas peças favoritas
+                        em um só lugar.
+                    </p>
+                    <a href="produto.html" class="botao">
+                        Ver peça
+                    </a>
+                </article>
+
+                <article class="card">
+                    <span class="icone">✨</span>
+                    <h3>Montar looks</h3>
+                    <p>
+                        Crie combinações diferentes
+                        com suas roupas.
+                    </p>
+                    <a href="looks.html" class="botao">
+                        Ver looks
+                    </a>
+                </article>
+
+                <article class="card">
+                    <span class="icone">📅</span>
+                    <h3>Planejar looks</h3>
+                    <p>
+                        Organize suas combinações
+                        para a semana.
+                    </p>
+                    <a href="looks.html" class="botao">
+                        Planejar
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
     </main>
 
+    <!-- Rodapé -->
     <footer>
         <p>My Closet — Seu estilo, sua organização.</p>
     </footer>
