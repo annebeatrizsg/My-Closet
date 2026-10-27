@@ -1,5 +1,18 @@
 
-/* Configurações gerais */
+/* DESIGN SYSTEM — MY CLOSET */
+:root {
+    --marrom: #8B6F50;
+    --marrom-escuro: #3D3028;
+    --bege: #F3EBDD;
+    --bege-escuro: #E5D6C3;
+    --branco-quente: #FFFCF6;
+    --texto: #302820;
+
+    --fonte-titulo: Georgia, serif;
+    --fonte-texto: Arial, sans-serif;
+}
+
+/* CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
@@ -11,198 +24,232 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fff7f9;
-    color: #49353d;
+    font-family: var(--fonte-texto);
+    background-color: var(--bege);
+    color: var(--texto);
     line-height: 1.6;
+
+    /* GRID: organiza cabeçalho, conteúdo e rodapé. */
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    width: 360px;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
 }
 
-/* NAVBAR */
-.navbar {
+/* TÍTULOS */
+h1,
+h2,
+h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--marrom-escuro);
+    line-height: 1.2;
+}
+
+/* CABEÇALHO */
+/* FLEXBOX: alinha a logo e o nome da marca. */
+.cabecalho {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    gap: 25px;
-    padding: 20px 8%;
-    background-color: #ffffff;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: var(--branco-quente);
 }
 
+.cabecalho h1 {
+    font-size: 25px;
+    color: var(--marrom);
+}
+
+/* LOGO REDONDA */
 .logo {
-    color: #b85c7a;
-    font-size: 28px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
+/* MENU DE NAVEGAÇÃO */
+/* FLEXBOX: distribui os links horizontalmente. */
 .menu {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 8px;
+    background-color: var(--branco-quente);
+    border-top: 1px solid var(--bege-escuro);
 }
 
 .menu a {
     text-decoration: none;
-    color: #49353d;
+    color: var(--marrom-escuro);
+    font-size: 13px;
     font-weight: bold;
 }
 
-.menu a:hover {
-    color: #b85c7a;
+.menu a:hover,
+.menu a[aria-current="page"] {
+    color: var(--marrom);
+    text-decoration: underline;
 }
 
-/* Botões */
+/* BOTÕES */
 .botao {
     display: inline-block;
-    padding: 12px 22px;
-    background-color: #b85c7a;
-    color: white;
+    padding: 11px 16px;
+    background-color: var(--marrom);
+    color: var(--branco-quente);
     text-decoration: none;
+    text-align: center;
     border-radius: 8px;
     font-weight: bold;
 }
 
 .botao:hover {
-    background-color: #94435e;
+    background-color: var(--marrom-escuro);
 }
 
-/* HERO */
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-    padding: 60px 8%;
+/* CONTEÚDO PRINCIPAL */
+/* GRID: organiza as seções de cada página
+uma abaixo da outra. */
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 20px;
+    padding: 20px 16px;
 }
 
-.hero-texto {
+/* BLOCOS DE CONTEÚDO */
+/* FLEXBOX: organiza textos e botões em coluna. */
+.bloco {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    flex: 1;
+    gap: 12px;
+    min-width: 0;
 }
 
-.hero-texto h2 {
-    font-size: 42px;
-    line-height: 1.2;
-    color: #94435e;
+.bloco p {
+    font-size: 15px;
 }
 
-.hero-texto p {
-    font-size: 18px;
-    max-width: 500px;
-}
-
-.hero-imagem {
-    flex: 1;
-}
-
-.hero-imagem img {
+/* IMAGEM DE DESTAQUE */
+.imagem-destaque {
     display: block;
     width: 100%;
-    height: 350px;
+    height: 210px;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 14px;
 }
 
-/* SEÇÃO DE CARDS */
-.secao-looks {
-    padding: 50px 8%;
-    background-color: #fce8ee;
-}
-
-.secao-looks > h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #94435e;
-}
-
-/* Grade flexível */
+/* GRADE DE CARDS */
+/* GRID: organiza os cartões em uma coluna
+na tela de celular. */
 .grade-cards {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    width: 100%;
 }
 
+/* CARD */
+/* FLEXBOX: organiza o conteúdo de cada cartão
+verticalmente. */
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    flex: 1 1 220px;
-    padding: 30px 20px;
-    background-color: #ffffff;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    padding: 16px;
+    background-color: var(--branco-quente);
     border-radius: 12px;
-    box-shadow: 0 4px 12px #49353d15;
-}
-
-.card-icone {
-    font-size: 35px;
+    box-shadow: 0 3px 10px #3D302810;
 }
 
 .card h3 {
-    color: #b85c7a;
+    color: var(--marrom);
 }
 
-/* SOBRE */
-.sobre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-    padding: 50px 8%;
+.card p {
+    font-size: 14px;
 }
 
-.sobre h2 {
-    color: #94435e;
+/* ÍCONES DOS CARDS */
+.icone,
+.card-icone {
+    font-size: 28px;
 }
 
-.sobre p {
-    max-width: 750px;
+/* IMAGENS DENTRO DOS CARDS */
+.card .imagem-destaque {
+    height: 210px;
+}
+
+/* Mantém os avatares inteiros dentro dos cards da equipe */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: var(--bege);
+    border-radius: 8px;
+}
+
+#pesquisa {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bege-escuro);
+    border-radius: 8px;
+    background: var(--branco-quente);
+    color: var(--texto);
+    font-size: 14px;
+}
+
+/* Destaca o campo quando a pessoa clica nele */
+#pesquisa:focus {
+    outline: 2px solid var(--marrom);
+    outline-offset: 2px;
 }
 
 /* RODAPÉ */
+/* FLEXBOX: centraliza o texto horizontalmente. */
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background-color: #b85c7a;
-    color: white;
+    padding: 16px;
+    background-color: var(--marrom-escuro);
+    color: var(--branco-quente);
     text-align: center;
+    font-size: 12px;
 }
 
-/* Responsividade */
-@media (max-width: 700px) {
-    .navbar {
-        flex-direction: column;
-    }
-
-    .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-texto {
-        align-items: center;
-    }
-
-    .hero-texto h2 {
-        font-size: 32px;
-    }
-
-    .hero-imagem {
+/* TELAS MAIORES */
+@media (min-width: 700px) {
+    body {
         width: 100%;
     }
 
-    .hero-imagem img {
-        height: 280px;
+    /* FLEXBOX: mantém os itens do cabeçalho alinhados. */
+    .cabecalho {
+        justify-content: flex-start;
+        padding: 20px 8%;
+    }
+
+    /* GRID: distribui os cards em três colunas. */
+    .grade-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    main {
+        padding: 30px 8%;
     }
 }
