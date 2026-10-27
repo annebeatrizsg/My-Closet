@@ -1,78 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Closet - Gardrobe & Look Planning</title>
-    <!-- Ligando o arquivo CSS externo -->
-    <link rel="stylesheet" href="style.css">
+    <title>Sobre a equipe - My Closet</title>
+    <link rel="stylesheet" href="style3.css">
 </head>
 <body>
 
-    <!-- Cabeçalho Principal da Página -->
-    <header>
+    <!-- Cabeçalho do site -->
+    <header class="cabecalho">
+        <img
+            class="logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfN-MIlW1K1WHr-yzY33R5t1U-qR4qwJUJFW_rS82gulIGEv0rxkSfMdc&s=10"
+            alt="Logo do My Closet"
+        >
         <h1>My Closet</h1>
-        <p class="subtitle">Organização inteligente de guarda-roupa e planejamento de looks</p>
     </header>
 
-    <!-- Conteúdo Principal -->
+    <!-- Menu de navegação entre as páginas -->
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="equipe.html" aria-current="page">Sobre</a>
+        <a href="looks.html">Looks</a>
+        <a href="closet.html">Meu closet</a>
+    </nav>
+
+    <!-- Conteúdo principal da página -->
     <main>
-        
-        <!-- Seção de Apresentação do Projeto My Closet -->
-        <section id="sobre-projeto" aria-label="Sobre o My Closet">
-            <h2>Sobre o Projeto</h2>
-            <p>O <strong>My Closet</strong> é um aplicativo web desenvolvido para ajudar você a gerenciar suas peças de vestuário, criar combinações de looks para o dia a dia e planejar o que vestir com praticidade e estilo.</p>
-            <p>Nosso objetivo é otimizar o seu tempo na hora de se vestir, promovendo o consumo consciente e a reutilização inteligente das suas roupas favoritas.</p>
+        <section class="bloco">
+            <h2>Conheça nossa equipe</h2>
+            <p>
+                Somos a equipe por trás do My Closet.
+                Cada integrante contribui com suas habilidades
+                para desenvolver e organizar o projeto.
+            </p>
         </section>
 
-        <!-- Seção da Equipe -->
-        <section id="equipe" aria-label="Membros da Equipe">
-            <h2>Conheça a Equipe</h2>
-            
-            <div class="cards-grid">
-                <!-- Membro 1: Wemilly -->
-                <article>
-                    <h3>Wemilly</h3>
-                    <img src="https://static.wikia.nocookie.net/souleater/images/0/01/Maka.png/revision/latest?cb=20151030191039&path-prefix=pt-br"
-                        alt="Avatar de Wemilly, personagem Maka Alban de Soul Eater" width="300" height="300">
-                    <p><strong>Comunicação:</strong> Explicar ideias e ouvir sugestões.</p>
-                    <a href="https://www.instagram.com/wemilly_vic?srtk=bnE0cnMxd3ZhZHht" target="_blank"
-                        rel="noopener noreferrer" class="btn-saiba-mais">
-                        Instagram de Wemilly
-                    </a>
-                </article>
+        <!-- Cards com as informações das integrantes -->
+        <section class="grade-cards">
 
-                <!-- Membro 2: Anne -->
-                <article>
-                    <h3>Anne</h3>
-                    <img src="https://i.pinimg.com/736x/4a/2d/4c/4a2d4c3f110a41ceaab8acf5204f6641.jpg" alt="Avatar de Anne"
-                        width="300" height="300">
-                    <p><strong>Resolução de problemas e pesquisa:</strong> Encontrar soluções para as dificuldades.</p>
-                    <a href="https://www.instagram.com/eub_eatrizg?cplk=YXR0dTJ5aWpybW0=" target="_blank"
-                        rel="noopener noreferrer" class="btn-saiba-mais">
-                        Instagram da Anne
-                    </a>
-                </article>
+            <!-- Integrante 1 -->
+            <article class="card">
+                <img
+                    class="imagem-destaque"
+                    src="https://static.wikia.nocookie.net/souleater/images/0/01/Maka.png/revision/latest?cb=20151030191039&path-prefix=pt-br"
+                    alt="Avatar representando a integrante Wemilly"
+                >
 
-                <!-- Membro 3: Bruna -->
-                <article>
-                    <h3>Bruna</h3>
-                    <img src="https://i.pinimg.com/736x/0a/13/66/0a136657a0cf69edd94ca2d52f3b09f4.jpg" alt="Avatar de Bruna"
-                        width="300" height="300">
-                    <p><strong>Design:</strong> Pensar na aparência e na organização visual.</p>
-                    <a href="https://www.instagram.com/bunx.w27?obrf=MW9qOXI1YWwxcTJjOQ==" target="_blank"
-                        rel="noopener noreferrer" class="btn-saiba-mais">
-                        Instagram da Bruna
-                    </a>
-                </article>
-            </div>
+                <h3>Wemilly</h3>
+
+                <p>
+                    <strong>Comunicação:</strong>
+                    explicar ideias e ouvir sugestões.
+                </p>
+
+                <a
+                    class="botao"
+                    href="https://www.instagram.com/reel/Dc83aZCRzA5/?stkn=MTg3cWl3ODIxM3NleQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+            </article>
+
+            <!-- Integrante 2 -->
+            <article class="card">
+                <img
+                    class="imagem-destaque"
+                    src="https://i.pinimg.com/736x/4a/2d/4c/4a2d4c3f110a41ceaab8acf5204f6641.jpg"
+                    alt="Avatar representando a integrante Anne"
+                >
+
+                <h3>Anne</h3>
+
+                <p>
+                    <strong>Resolução de problemas e pesquisa:</strong>
+                    encontrar soluções para as dificuldades.
+                </p>
+
+                <a
+                    class="botao"
+                    href="https://www.instagram.com/eub_eatrizg?cplk=YXR0dTJ5aWpybW0="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+            </article>
+
+            <!-- Integrante 3 -->
+            <article class="card">
+                <img
+                    class="imagem-destaque"
+                    src="https://i.pinimg.com/736x/0a/13/66/0a136657a0cf69edd94ca2d52f3b09f4.jpg"
+                    alt="Avatar representando a integrante Bruna"
+                >
+
+                <h3>Bruna</h3>
+
+                <p>
+                    <strong>Design:</strong>
+                    pensar na aparência e na organização visual.
+                </p>
+
+                <a
+                    class="botao"
+                    href="https://www.instagram.com/bunx.w27?obrf=MW9qOXI1YWwxcTJjOQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+            </article>
+
         </section>
-
     </main>
 
-    <!-- Rodapé da Página -->
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 - My Closet & Equipe de Desenvolvimento. Todos os direitos reservados.</p>
+        <p>My Closet — Seu estilo, sua organização.</p>
     </footer>
 
 </body>
