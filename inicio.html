@@ -1,276 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Closet | Início</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* ===== CONFIGURAÇÕES GERAIS ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <header class="cabecalho">
+        <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfN-MIlW1K1WHr-yzY33R5t1U-qR4qwJUJFW_rS82gulIGEv0rxkSfMdc&s=10" alt="Logo do My Closet">
+        <h1>My Closet</h1>
+    </header>
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5efe6;
-    color: #4b382b;
-    line-height: 1.6;
-}
+    <nav class="menu">
+        <a href="inicio.html" aria-current="page">Início</a>
+        <a href="equipe.html">Sobre</a>
+        <a href="looks.html">Looks</a>
+        <a href="closet.html">Meu closet</a>
+    </nav>
 
-/* ===== CABEÇALHO ===== */
-.cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    background-color: #e8d8c3;
-    padding: 15px 20px;
-    min-height: 100px;
-}
+    <main>
+        <section class="bloco" id="inicio">
+            <h2>Seu estilo, sua identidade.</h2>
+            <p>Organize seu guarda-roupa, crie combinações incríveis e descubra novas formas de usar suas roupas favoritas.</p>
+            <a href="looks.html" class="botao">Explorar looks</a>
+        </section>
 
-.logo {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    border-radius: 50%;
-}
+        <section class="bloco">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Inspiração de moda e roupas" class="imagem-destaque">
+        </section>
 
-.cabecalho h1 {
-    font-size: 2rem;
-    color: #5c4033;
-    margin: 0;
-}
+        <section class="bloco">
+            <h2>Comece por aqui</h2>
+            <div class="grade-cards">
+                <article class="card">
+                    <span class="icone">👗</span>
+                    <h3>Meu guarda-roupa</h3>
+                    <p>Organize suas peças favoritas em um só lugar.</p>
+                    <a href="closet.html" class="botao">Ver peça</a>
+                </article>
 
-/* ===== MENU DE NAVEGAÇÃO ===== */
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #5c4033;
-    padding: 10px 15px;
-}
+                <article class="card">
+                    <span class="icone">✨</span>
+                    <h3>Montar looks</h3>
+                    <p>Crie combinações diferentes com suas roupas.</p>
+                    <a href="looks.html" class="botao">Ver looks</a>
+                </article>
 
-.menu a {
-    color: #fffaf3;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 8px 18px;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
+                <article class="card">
+                    <span class="icone">📅</span>
+                    <h3>Planejar looks</h3>
+                    <p>Organize suas combinações para a semana.</p>
+                    <a href="looks.html" class="botao">Planejar</a>
+                </article>
+            </div>
+        </section>
+    </main>
 
-.menu a:hover {
-    background-color: #96765b;
-}
+    <footer>
+        <p>My Closet — Seu estilo, sua organização.</p>
+    </footer>
 
-.menu a[aria-current="page"] {
-    background-color: #96765b;
-    font-weight: bold;
-}
-
-/* ===== CONTEÚDO PRINCIPAL ===== */
-main {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-    padding: 0;
-}
-
-/* ===== BLOCOS DE CONTEÚDO ===== */
-.bloco {
-    background-color: #fffdf9;
-    padding: 20px;
-    margin: 5px 0 20px;
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgba(92, 64, 51, 0.10);
-}
-
-.bloco h2 {
-    color: #5c4033;
-    font-size: 1.7rem;
-    margin: 0 0 10px;
-}
-
-.bloco p {
-    margin-bottom: 12px;
-}
-
-/* Aproxima o primeiro bloco do menu */
-main > .bloco:first-child {
-    margin-top: 0;
-}
-
-main > .bloco:first-child h2 {
-    margin-top: 0;
-}
-
-/* ===== BOTÕES ===== */
-.botao {
-    display: inline-block;
-    background-color: #96765b;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 25px;
-    margin-top: 10px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.botao:hover {
-    background-color: #5c4033;
-    transform: translateY(-2px);
-}
-
-/* ===== GRADE DE CARTÕES ===== */
-.grade-cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    margin: 15px 0 25px;
-}
-
-.card {
-    background-color: #fffdf9;
-    border-radius: 15px;
-    padding: 18px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(92, 64, 51, 0.12);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    color: #5c4033;
-    margin: 12px 0 8px;
-    font-size: 1.25rem;
-}
-
-.card p {
-    margin: 7px 0;
-}
-
-/* ===== IMAGENS ===== */
-.imagem-destaque {
-    display: block;
-    width: 100%;
-    max-height: 380px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin: 0 auto 12px;
-}
-
-.bloco .imagem-destaque {
-    max-height: 450px;
-}
-
-.card .imagem-destaque {
-    height: 230px;
-    max-height: none;
-}
-
-/* ===== ÍCONES ===== */
-.icone {
-    display: block;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* ===== CAMPO DE PESQUISA ===== */
-#pesquisa {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 15px;
-    margin-top: 8px;
-    border: 1px solid #cbb69e;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    background-color: #fffdf9;
-    color: #4b382b;
-}
-
-#pesquisa:focus {
-    border-color: #96765b;
-    box-shadow: 0 0 0 3px rgba(150, 118, 91, 0.15);
-}
-
-/* ===== RODAPÉ ===== */
-footer {
-    background-color: #5c4033;
-    color: #fffaf3;
-    text-align: center;
-    padding: 18px;
-    margin-top: 25px;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* ===== RESPONSIVIDADE PARA TABLETS ===== */
-@media (max-width: 800px) {
-    .grade-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .cabecalho h1 {
-        font-size: 1.7rem;
-    }
-
-    main {
-        width: 94%;
-    }
-}
-
-/* ===== RESPONSIVIDADE PARA CELULARES ===== */
-@media (max-width: 550px) {
-    .cabecalho {
-        min-height: 80px;
-        padding: 10px;
-        gap: 10px;
-    }
-
-    .logo {
-        width: 50px;
-        height: 50px;
-    }
-
-    .cabecalho h1 {
-        font-size: 1.4rem;
-    }
-
-    .menu {
-        gap: 5px;
-        padding: 8px;
-    }
-
-    .menu a {
-        padding: 7px 10px;
-        font-size: 0.9rem;
-    }
-
-    main {
-        width: 94%;
-        margin-top: 0;
-    }
-
-    .bloco {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-
-    .bloco h2 {
-        font-size: 1.4rem;
-    }
-
-    .grade-cards {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .card .imagem-destaque {
-        height: 250px;
-    }
-}
+</body>
+</html>
